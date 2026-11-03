@@ -1,0 +1,66 @@
+.room-rest .pet-art{background-color:#d6c5ff;background-image:radial-gradient(circle at 86% 14%,#ffe36b 0 13px,transparent 14px),radial-gradient(circle at 25% 22%,#fff 0 2px,transparent 3px),radial-gradient(circle at 47% 13%,#fff 0 2px,transparent 3px),radial-gradient(circle at 69% 28%,#fff 0 2px,transparent 3px),linear-gradient(#17171320 2px,transparent 2px),linear-gradient(90deg,#17171320 2px,transparent 2px),linear-gradient(180deg,transparent 0 78%,#c98c59 78% 100%);background-size:auto,auto,auto,auto,58px 50px,58px 50px,100% 100%}
+.room-rest .meter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+.room-rest .meter-grid .meter-row{margin:0}
+.pet-stage.room-rest{padding-bottom:42px}
+.pet-stage.room-rest>.status-panel{grid-column:1/-1;grid-row:7;width:100%;align-self:start;margin-top:10px;margin-bottom:0;padding-bottom:10px}
+.pet-stage.room-rest>.mini-game-link{grid-column:1/-1;grid-row:8;justify-self:start;margin-top:16px}
+@media(max-width:680px){.pet-stage.room-rest>.status-panel{order:1}.pet-stage.room-rest>.mini-game-link{order:2;align-self:flex-start;margin-top:18px}}
+.sleep-fill{background:#d6c5ff}.sleep-fill.low{background:var(--red)}
+.room-rest .art-rays{display:none}
+.rest-props{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.rest-props:after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;border-top:4px solid var(--ink);background:repeating-linear-gradient(90deg,#c98c59 0 64px,#171713 64px 67px)}
+.rest-props .rest-bed{position:absolute;z-index:2;left:8%;bottom:16%;width:52%;height:31%;border:4px solid var(--ink);background:#fff8e8;box-shadow:6px 6px 0 var(--ink)}
+.rest-props .rest-bed,.rest-props .bed-pillow,.rest-props .bed-blanket{transform:none;rotate:0deg}
+.rest-props .rest-bed:before{content:"";position:absolute;left:-12px;top:-20px;width:18px;height:calc(100% + 24px);border:4px solid var(--ink);background:#ff5c43;box-shadow:3px 3px 0 var(--ink)}
+.rest-props .rest-bed:after{content:"";position:absolute;left:5%;right:-5%;bottom:-12px;height:10px;border-left:5px solid var(--ink);border-right:5px solid var(--ink)}
+.rest-props .bed-pillow{position:absolute;z-index:1;left:6%;top:10%;width:28%;height:33%;border:3px solid var(--ink);background:#fff;box-shadow:2px 2px 0 var(--ink)}
+.rest-props .bed-blanket{position:absolute;left:31%;right:0;top:8%;bottom:0;border-left:3px solid var(--ink);background:repeating-linear-gradient(135deg,#9bdcf2 0 15px,#73c4e0 15px 30px)}
+.rest-props .rest-table{position:absolute;z-index:3;right:10%;bottom:16%;width:20%;height:13%;border:4px solid var(--ink);background:#f3aa63;box-shadow:4px 4px 0 var(--ink)}
+.rest-props .rest-table:after{content:"";position:absolute;left:13%;right:13%;top:100%;height:33px;border-left:5px solid var(--ink);border-right:5px solid var(--ink)}
+.rest-props .rest-lamp{position:absolute;z-index:4;right:14%;bottom:30%;width:12%;height:24%}
+.rest-props .rest-lamp{padding:0;border:0;background:transparent;pointer-events:auto;cursor:pointer;transition:filter .2s}
+.rest-props .rest-lamp:before{content:"";position:absolute;left:0;top:0;width:100%;height:48%;border:3px solid var(--ink);background:#ffd34e;clip-path:polygon(19% 0,81% 0,100% 100%,0 100%);filter:drop-shadow(3px 3px 0 var(--ink))}
+.rest-props .rest-lamp:after{content:"";position:absolute;left:43%;top:46%;width:14%;height:48%;background:#171713;box-shadow:-14px 31px 0 -5px #171713,14px 31px 0 -5px #171713}
+.rest-props .rest-lamp.lamp-on{filter:drop-shadow(0 0 12px #ffd34e)}
+.rest-props .rest-lamp.lamp-off:before{background:#95939b;box-shadow:3px 3px 0 var(--ink)}
+.room-rest:not(.lamp-off) .pet-art{background-color:#77738c}
+.room-rest.lamp-off .pet-art{background-color:#d6c5ff;background-image:radial-gradient(circle at 84% 16%,#ffd34e 0 18px,var(--ink) 19px 22px,transparent 23px),radial-gradient(ellipse at 24% 18%,#fff8e8 0 12px,transparent 13px),radial-gradient(ellipse at 33% 18%,#fff8e8 0 16px,transparent 17px),radial-gradient(ellipse at 42% 18%,#fff8e8 0 11px,transparent 12px),linear-gradient(#17171320 2px,transparent 2px),linear-gradient(90deg,#17171320 2px,transparent 2px),linear-gradient(180deg,transparent 0 78%,#c98c59 78% 100%)}
+.room-rest:not(.lamp-off) .rest-bed,.room-rest:not(.lamp-off) .rest-table,.room-rest:not(.lamp-off) .rest-props:after{filter:brightness(.78)}
+.room-rest:not(.lamp-off) .pet-tap{filter:brightness(.78)}
+.room-rest:not(.lamp-off) .rest-lamp.lamp-on{filter:drop-shadow(0 0 16px #ffd34e)}
+.rest-props .rest-lamp:focus-visible{outline:3px dashed var(--ink);outline-offset:5px}
+.room-rest .rest-props{z-index:1}
+.room-rest .pet-tap{z-index:6}
+.room-rest .stage-sticker{background:var(--yellow)}
+.room-rest.pet-in-bed .pet-tap{transform:scale(.72);transform-origin:center;animation:pet-sleep-float 2.8s ease-in-out infinite;z-index:6}
+.room-rest.pet-in-bed .rest-bed{z-index:2}
+.room-rest.pet-sleeping .pet-tap{animation:none;transform:scale(.72)}
+.sleep-zzz{display:none;position:absolute;z-index:8;left:42%;top:19%;padding:5px 8px;border:2px solid var(--ink);background:#fff8e8;box-shadow:3px 3px 0 var(--ink);font:700 14px 'DM Mono',monospace;transform:rotate(-8deg)}
+.room-rest.pet-in-bed.pet-masked .sleep-zzz{display:block;animation:sleep-zzz-float 1.4s ease-in-out infinite alternate}
+.room-rest.pet-in-bed.pet-masked.lamp-off .sleep-zzz{display:none}
+.room-rest .pet-tap .bed-blanket{display:none;position:absolute;z-index:5;left:5%;right:5%;bottom:8%;height:38%;border:3px solid var(--ink);border-top-width:5px;background:repeating-linear-gradient(135deg,#9bdcf2 0 14px,#73c4e0 14px 28px);box-shadow:3px 3px 0 var(--ink);pointer-events:none}
+.room-rest.pet-in-bed .pet-tap .bed-blanket{display:block}
+@keyframes pet-sleep-float{50%{translate:0 4px}}
+@keyframes sleep-zzz-float{to{translate:0 -8px;rotate:8deg}}
+.room-rest .sleep-mask{display:flex;position:absolute;z-index:9;left:73%;top:73%;width:74px;height:32px;align-items:center;justify-content:space-evenly;padding:0;border:3px solid var(--ink);background:#ffafd0;box-shadow:3px 3px 0 var(--ink);cursor:grab;touch-action:none;user-select:none;transform:rotate(-5deg)}
+.room-rest .sleep-mask i{width:12px;height:12px;border:2px solid var(--ink);border-radius:50%;background:#fff}
+.room-rest .sleep-mask.dragging{position:absolute;cursor:grabbing;transform:rotate(3deg) scale(1.06)}
+.sleep-mask[hidden]{display:none!important}
+.sleep-mask-overlay{display:none;position:absolute;z-index:10;width:74px;height:32px;border:3px solid var(--ink);background:#ffafd0;box-shadow:3px 3px 0 var(--ink);pointer-events:auto;cursor:pointer}
+.sleep-mask-overlay:before,.sleep-mask-overlay:after{content:"";position:absolute;top:8px;width:12px;height:12px;border:2px solid var(--ink);border-radius:50%;background:#fff}
+.sleep-mask-overlay:before{left:14px}.sleep-mask-overlay:after{right:14px}
+.room-rest.pet-masked .sleep-mask-overlay{display:block}
+@media(max-width:680px){.room-rest .sleep-mask{width:62px;height:28px;left:73%;top:75%}.sleep-mask-overlay{width:62px;height:28px}}
+.room-rest .sleep-mask,.room-rest .sleep-mask-overlay{width:140px;height:58px;border-radius:48% 48% 40% 40% / 62% 62% 42% 42%;clip-path:polygon(0 20%,6% 3%,41% 3%,47% 17%,50% 34%,53% 17%,59% 3%,94% 3%,100% 20%,96% 78%,76% 100%,57% 92%,50% 76%,43% 92%,24% 100%,4% 78%)}
+.room-rest .sleep-mask{left:64%;top:72%}.room-rest .sleep-mask-overlay{border:3px solid var(--ink);background:#ffafd0;box-shadow:3px 3px 0 var(--ink)}
+.room-rest .sleep-mask i{width:19px;height:19px;border-width:2px}
+.sleep-mask-overlay:before,.sleep-mask-overlay:after{top:18px;width:19px;height:19px}
+.sleep-mask-overlay:before{left:32px}.sleep-mask-overlay:after{right:32px}
+@media(max-width:680px){.room-rest .sleep-mask,.room-rest .sleep-mask-overlay{width:116px;height:48px}.room-rest .sleep-mask{left:58%;top:74%}.sleep-mask-overlay:before,.sleep-mask-overlay:after{top:14px;width:15px;height:15px}.sleep-mask-overlay:before{left:25px}.sleep-mask-overlay:after{right:25px}}
+@media(max-width:680px){.rest-props .rest-bed{left:5%;width:56%;height:29%;bottom:16%}.rest-props .rest-table{right:6%;width:21%}.rest-props .rest-lamp{right:11%}}
+.rest-props .rest-bed{left:18%;bottom:8%;width:22%;height:62%;border:4px solid var(--ink);background:#fff8e8;transform:none;rotate:0deg}
+.rest-props .rest-bed:before{left:-4%;right:-4%;top:-24px;width:auto;height:25px;border:4px solid var(--ink);background:#ff5c43;box-shadow:4px 4px 0 var(--ink)}
+.rest-props .rest-bed:after{left:6%;right:6%;bottom:-15px;height:12px;border-left:5px solid var(--ink);border-right:5px solid var(--ink);border-bottom:4px solid var(--ink)}
+.rest-props .bed-pillow{left:22%;top:5%;width:56%;height:30%;border:3px solid var(--ink);background:#fff;box-shadow:3px 3px 0 var(--ink)}
+.rest-props .bed-blanket{left:5%;right:5%;top:43%;bottom:3%;border:3px solid var(--ink);background:repeating-linear-gradient(135deg,#9bdcf2 0 15px,#73c4e0 15px 30px)}
+@media(max-width:680px){.rest-props .rest-bed{left:15%;width:24%;height:58%;bottom:8%}.rest-props .rest-bed:before{top:-20px;height:21px}.rest-props .bed-pillow{left:22%;width:56%;height:29%}}
