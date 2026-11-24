@@ -60,30 +60,30 @@ export function ShopView({ onNavigate }: ShopViewProps) {
     <div className="max-w-[1240px] mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 pb-24 md:pb-12">
       {/* Storefront Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
+        <div className="min-w-0">
           <p className="text-xs font-bold text-[#171713]/65">Toko PetCoin · 2 Mata Uang</p>
-          <h1 className="flex items-center gap-2 font-display text-3xl sm:text-4xl font-extrabold">
-            <ShoppingBag className="w-7 h-7 sm:w-8 sm:h-8 shrink-0" aria-hidden="true" />
-            Adopsi Pet &amp; Butik Gaya
+          <h1 className="flex items-start gap-2 font-display text-2xl sm:text-4xl font-extrabold leading-tight">
+            <ShoppingBag className="w-6 h-6 sm:w-8 sm:h-8 shrink-0 mt-1" aria-hidden="true" />
+            <span className="min-w-0">Adopsi Pet &amp; Butik Gaya</span>
           </h1>
-          <p className="text-sm text-[#171713]/80 mt-1">
+          <p className="text-sm text-[#171713]/80 mt-2">
             Gunakan <strong>Treat 🍪</strong> untuk adopsi hewan baru, dan <strong>Coin 🪙</strong> untuk membeli aksesori serta mainan.
           </p>
         </div>
 
-        <div className="flex gap-2">
+        <div className="grid grid-cols-2 sm:flex gap-2">
           <button
             type="button"
             onClick={() => {
               sfx.playPop();
               setTab('adopt');
             }}
-            className={`neo-btn px-4 py-2.5 text-xs sm:text-sm font-extrabold flex items-center gap-1.5 whitespace-nowrap ${
+            className={`neo-btn min-h-11 w-full sm:w-auto px-2 sm:px-4 py-2 text-[11px] sm:text-sm font-extrabold flex items-center justify-center gap-1.5 ${
               tab === 'adopt' ? 'bg-[#ffd86b]' : 'bg-[#fffaf0]'
             }`}
           >
-            <Heart className="w-4 h-4" />
-            <span>Adopsi Hewan (🍪 Treat)</span>
+            <Heart className="w-4 h-4 shrink-0" />
+            <span className="leading-tight text-center">Adopsi Hewan (🍪 Treat)</span>
           </button>
           <button
             type="button"
@@ -91,12 +91,12 @@ export function ShopView({ onNavigate }: ShopViewProps) {
               sfx.playPop();
               setTab('accessories');
             }}
-            className={`neo-btn px-4 py-2.5 text-xs sm:text-sm font-extrabold flex items-center gap-1.5 whitespace-nowrap ${
+            className={`neo-btn min-h-11 w-full sm:w-auto px-2 sm:px-4 py-2 text-[11px] sm:text-sm font-extrabold flex items-center justify-center gap-1.5 ${
               tab === 'accessories' ? 'bg-[#ff8fb3]' : 'bg-[#fffaf0]'
             }`}
           >
-            <ShoppingBag className="w-4 h-4" />
-            <span>Butik Aksesori (🪙 Coin)</span>
+            <ShoppingBag className="w-4 h-4 shrink-0" />
+            <span className="leading-tight text-center">Butik Aksesori (🪙 Coin)</span>
           </button>
         </div>
       </div>
@@ -155,7 +155,7 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between gap-3 pt-2 border-t-2 border-[#171713]/20">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3 pt-2 border-t-2 border-[#171713]/20">
                     <div className="font-mono-num text-sm font-extrabold">
                       {pet.priceTreats === 0 ? 'FREE · Starter' : `🍪 ${pet.priceTreats} Treat`}
                     </div>
@@ -167,7 +167,7 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                           setActivePet(pet.id);
                           onNavigate('care');
                         }}
-                        className="neo-btn bg-[#8be084] px-4 py-2 text-xs font-extrabold whitespace-nowrap"
+                        className="neo-btn min-h-11 w-full sm:w-auto bg-[#8be084] px-3 sm:px-4 py-2 text-xs font-extrabold"
                       >
                         Rawat Sekarang →
                       </button>
@@ -175,7 +175,7 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                       <button
                         type="button"
                         onClick={() => handleAdopt(pet.id)}
-                        className={`neo-btn px-4 py-2 text-xs font-extrabold whitespace-nowrap ${
+                        className={`neo-btn min-h-11 w-full sm:w-auto px-3 sm:px-4 py-2 text-xs font-extrabold ${
                           affordable ? 'bg-[#ffd86b]' : 'bg-[#fffaf0]'
                         }`}
                       >
@@ -194,8 +194,8 @@ export function ShopView({ onNavigate }: ShopViewProps) {
       {tab === 'accessories' && (
         <section aria-labelledby="accessory-shop-title" className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left: Live Dressing Preview */}
-          <div className="lg:col-span-4 neo-card p-5 bg-[#fffaf0] space-y-4">
-            <div className="flex items-center justify-between">
+          <div className="lg:col-span-4 neo-card p-3 sm:p-5 bg-[#fffaf0] space-y-4">
+            <div className="flex items-center justify-between gap-2">
               <div>
                 <h2 id="accessory-shop-title" className="font-display text-xl font-extrabold">
                   Butik Aksesori
@@ -221,7 +221,7 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                       sfx.playPop();
                       setSelectedPetId(p.id);
                     }}
-                    className={`neo-btn px-2.5 py-1 text-xs font-bold ${
+                    className={`neo-btn min-h-10 px-2.5 py-1.5 text-xs font-bold ${
                       selected ? 'bg-[#ffd86b]' : 'bg-[#f5efdf]'
                     } ${owned ? '' : 'opacity-60'}`}
                   >
@@ -251,9 +251,9 @@ export function ShopView({ onNavigate }: ShopViewProps) {
           </div>
 
           {/* Right: Items Grid */}
-          <div className="lg:col-span-8 neo-card p-5 bg-[#fffaf0] space-y-4">
+          <div className="lg:col-span-8 neo-card p-3 sm:p-5 bg-[#fffaf0] space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex gap-2">
+              <div className="flex flex-1 flex-wrap gap-2">
                 {[
                   { id: 'hair' as AccessoryCategory, label: 'Rambut' },
                   { id: 'accessories' as AccessoryCategory, label: 'Aksesori' },
@@ -266,7 +266,7 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                       sfx.playPop();
                       setCatTab(cat.id);
                     }}
-                    className={`neo-btn px-3.5 py-2 text-xs font-extrabold ${
+                    className={`neo-btn min-h-10 flex-1 sm:flex-none px-2.5 sm:px-3.5 py-2 text-xs font-extrabold ${
                       catTab === cat.id ? 'bg-[#7bd3ea]' : 'bg-[#f5efdf]'
                     }`}
                   >
@@ -279,28 +279,28 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                 <button
                   type="button"
                   onClick={() => equipAccessory(selectedPetId, catTab, undefined)}
-                  className="text-xs font-bold underline cursor-pointer"
+                  className="min-h-10 text-xs font-bold underline cursor-pointer"
                 >
                   Lepas item terpasang
                 </button>
               )}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
               {catTab === 'hair' &&
                 targetPetDef.hairAssets.map(item => {
                   const owned = targetPetSave.inventory.hair.includes(item.id);
                   const worn = targetPetSave.equipped.hair === item.id;
                   return (
-                    <article key={item.id} className="neo-card-sm bg-[#f5efdf] p-4 flex flex-col justify-between gap-3">
+                    <article key={item.id} className="neo-card-sm min-w-0 bg-[#f5efdf] p-2.5 sm:p-4 flex flex-col justify-between gap-3">
                       <div className="space-y-2 text-center">
                         <img
                           src={pngUrl(item.normal)}
                           alt={item.name}
                           referrerPolicy="no-referrer"
-                          className="w-24 h-24 mx-auto object-contain"
+                          className="w-16 h-16 sm:w-24 sm:h-24 mx-auto object-contain"
                         />
-                        <h3 className="font-display text-base font-extrabold">{item.name}</h3>
+                        <h3 className="font-display text-sm sm:text-base font-extrabold break-words">{item.name}</h3>
                         <p className="font-mono-num text-xs font-bold">
                           {owned ? (worn ? 'Sedang dipakai' : 'Sudah dimiliki') : `🪙 ${item.priceCoins} Coin`}
                         </p>
@@ -308,7 +308,7 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                       <button
                         type="button"
                         onClick={() => handleBuyOrEquip('hair', item.id)}
-                        className={`neo-btn w-full py-2 text-xs font-extrabold flex items-center justify-center gap-1 ${
+                        className={`neo-btn min-h-10 w-full px-1.5 sm:px-2 py-2 text-[10px] sm:text-xs leading-tight font-extrabold flex items-center justify-center gap-1 ${
                           worn ? 'bg-[#8be084]' : owned ? 'bg-[#fffaf0]' : 'bg-[#ffd86b]'
                         }`}
                       >
@@ -332,15 +332,15 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                   const owned = targetPetSave.inventory.accessories.includes(item.id);
                   const worn = targetPetSave.equipped.accessories === item.id;
                   return (
-                    <article key={item.id} className="neo-card-sm bg-[#f5efdf] p-4 flex flex-col justify-between gap-3">
+                    <article key={item.id} className="neo-card-sm min-w-0 bg-[#f5efdf] p-2.5 sm:p-4 flex flex-col justify-between gap-3">
                       <div className="space-y-2 text-center">
                         <img
                           src={pngUrl(item.image)}
                           alt={item.name}
                           referrerPolicy="no-referrer"
-                          className="w-24 h-24 mx-auto object-contain"
+                          className="w-16 h-16 sm:w-24 sm:h-24 mx-auto object-contain"
                         />
-                        <h3 className="font-display text-base font-extrabold">{item.name}</h3>
+                        <h3 className="font-display text-sm sm:text-base font-extrabold break-words">{item.name}</h3>
                         <p className="font-mono-num text-xs font-bold">
                           {owned ? (worn ? 'Sedang dipakai' : 'Sudah dimiliki') : `🪙 ${item.priceCoins} Coin`}
                         </p>
@@ -348,7 +348,7 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                       <button
                         type="button"
                         onClick={() => handleBuyOrEquip('accessories', item.id)}
-                        className={`neo-btn w-full py-2 text-xs font-extrabold flex items-center justify-center gap-1 ${
+                        className={`neo-btn min-h-10 w-full px-1.5 sm:px-2 py-2 text-[10px] sm:text-xs leading-tight font-extrabold flex items-center justify-center gap-1 ${
                           worn ? 'bg-[#8be084]' : owned ? 'bg-[#fffaf0]' : 'bg-[#ff8fb3]'
                         }`}
                       >
@@ -372,15 +372,15 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                   const owned = targetPetSave.inventory.playTools.includes(item.id);
                   const worn = targetPetSave.equipped.playTools === item.id;
                   return (
-                    <article key={item.id} className="neo-card-sm bg-[#f5efdf] p-4 flex flex-col justify-between gap-3">
+                    <article key={item.id} className="neo-card-sm min-w-0 bg-[#f5efdf] p-2.5 sm:p-4 flex flex-col justify-between gap-3">
                       <div className="space-y-2 text-center">
                         <img
                           src={pngUrl(item.image)}
                           alt={item.name}
                           referrerPolicy="no-referrer"
-                          className="w-24 h-24 mx-auto object-contain"
+                          className="w-16 h-16 sm:w-24 sm:h-24 mx-auto object-contain"
                         />
-                        <h3 className="font-display text-base font-extrabold">{item.name}</h3>
+                        <h3 className="font-display text-sm sm:text-base font-extrabold break-words">{item.name}</h3>
                         <p className="font-mono-num text-xs font-bold">
                           {owned ? (worn ? 'Sedang dibawa' : 'Sudah dimiliki') : `🪙 ${item.priceCoins} Coin`}
                         </p>
@@ -388,7 +388,7 @@ export function ShopView({ onNavigate }: ShopViewProps) {
                       <button
                         type="button"
                         onClick={() => handleBuyOrEquip('playTools', item.id)}
-                        className={`neo-btn w-full py-2 text-xs font-extrabold flex items-center justify-center gap-1 ${
+                        className={`neo-btn min-h-10 w-full px-1.5 sm:px-2 py-2 text-[10px] sm:text-xs leading-tight font-extrabold flex items-center justify-center gap-1 ${
                           worn ? 'bg-[#8be084]' : owned ? 'bg-[#fffaf0]' : 'bg-[#7bd3ea]'
                         }`}
                       >
