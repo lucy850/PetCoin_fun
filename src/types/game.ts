@@ -110,7 +110,7 @@ export interface JuiceParticle {
   tone: 'treat' | 'coin' | 'love' | 'xp' | 'clean' | 'bad';
 }
 
-export type ActiveView = 'home' | 'care' | 'minigames' | 'shop';
+export type ActiveView = 'home' | 'care' | 'minigames' | 'playground' | 'shop';
 
 export interface GameSaveState {
   treats: number;

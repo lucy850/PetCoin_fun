@@ -89,6 +89,17 @@ export function HomeView({ onNavigate, onOpenMissions }: HomeViewProps) {
                 <Gamepad2 className="w-4 h-4" />
                 <span>Main Mini Game</span>
               </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  sfx.playPop();
+                  onNavigate('playground');
+                }}
+                className="neo-btn bg-[#ff8fb3] px-5 py-3 text-sm sm:text-base font-extrabold flex items-center gap-2 whitespace-nowrap"
+              >
+                <span>Playground Online</span>
+              </button>
             </div>
           </div>
 

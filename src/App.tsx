@@ -4,6 +4,7 @@ import { HomeView } from './components/HomeView';
 import { JuiceOverlay } from './components/JuiceOverlay';
 import { MiniGamesView } from './components/MiniGamesView';
 import { Navbar } from './components/Navbar';
+import { PlaygroundView } from './components/PlaygroundView';
 import { ProgressionModal } from './components/ProgressionModal';
 import { ShopView } from './components/ShopView';
 import { GameProvider } from './hooks/useGameStore';
@@ -27,6 +28,7 @@ function AppShell() {
         )}
         {activeView === 'care' && <CareRoomView onNavigate={setActiveView} />}
         {activeView === 'minigames' && <MiniGamesView />}
+        {activeView === 'playground' && <PlaygroundView />}
         {activeView === 'shop' && <ShopView onNavigate={setActiveView} />}
       </main>
 

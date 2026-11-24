@@ -1,4 +1,4 @@
-import { Award, Gamepad2, Heart, Home, ShoppingBag, Volume2, VolumeX } from 'lucide-react';
+import { Award, Gamepad2, Heart, Home, ShoppingBag, Users, Volume2, VolumeX } from 'lucide-react';
 import { useGameStore } from '../hooks/useGameStore';
 import { ActiveView } from '../types/game';
 import { sfx } from '../utils/sound';
@@ -13,6 +13,7 @@ const NAV_ITEMS: { id: ActiveView; label: string; icon: typeof Home }[] = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'care', label: 'Rawat Pet', icon: Heart },
   { id: 'minigames', label: 'Mini Game', icon: Gamepad2 },
+  { id: 'playground', label: 'Playground', icon: Users },
   { id: 'shop', label: 'Toko', icon: ShoppingBag },
 ];
 
@@ -37,7 +38,7 @@ export function Navbar({ activeView, onNavigate, onOpenMissions }: NavbarProps) 
             PETCOIN
           </button>
 
-          {/* Zone 2: 4 Clean Single-Line Nav Links */}
+          {/* Zone 2: 5 Clean Single-Line Nav Links */}
           <nav aria-label="Navigasi utama" className="hidden md:flex items-center gap-6">
             {NAV_ITEMS.map(item => {
               const isActive = activeView === item.id;
@@ -105,10 +106,10 @@ export function Navbar({ activeView, onNavigate, onOpenMissions }: NavbarProps) 
         </div>
       </header>
 
-      {/* Mobile Bottom Navigation (compact <= 58px to stay well under 15% mobile height) */}
+      {/* Mobile Bottom Navigation (compact <= 56px) */}
       <nav
         aria-label="Navigasi seluler"
-        className="md:hidden fixed bottom-0 left-0 right-0 z-40 border-t-2 border-[#171713] bg-[#fffaf0] grid grid-cols-4 h-14"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 border-t-2 border-[#171713] bg-[#fffaf0] grid grid-cols-5 h-14"
       >
         {NAV_ITEMS.map(item => {
           const Icon = item.icon;
@@ -118,7 +119,7 @@ export function Navbar({ activeView, onNavigate, onOpenMissions }: NavbarProps) 
               key={item.id}
               type="button"
               onClick={() => handleNav(item.id)}
-              className={`flex flex-col items-center justify-center gap-0.5 text-[11px] font-bold whitespace-nowrap cursor-pointer ${
+              className={`flex flex-col items-center justify-center gap-0.5 text-[10px] font-bold whitespace-nowrap cursor-pointer ${
                 isActive ? 'bg-[#ffd86b] text-[#171713]' : 'text-[#171713]/75'
               }`}
             >

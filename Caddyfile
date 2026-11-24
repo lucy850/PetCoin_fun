@@ -1,0 +1,32 @@
+# Default: ":80" untuk lokal / IP VPS (HTTP).
+# Untuk production dengan domain & HTTPS otomatis (Let's Encrypt),
+# set environment variable SITE_ADDRESS=domainkamu.com di file .env
+{$SITE_ADDRESS::80} {
+  encode zstd gzip
+
+  # Security headers dasar
+  header {
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "SAMEORIGIN"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    -Server
+  }
+
+  # 1. Endpoint WebSocket Playground -> Golang backend
+  # Caddy v2 otomatis meneruskan header Upgrade & Connection untuk WebSocket (ws:// dan wss://)
+  handle /ws* {
+    reverse_proxy backend-ws:8080 {
+      flush_interval -1
+    }
+  }
+
+  # 2. Health check endpoint Golang backend
+  handle /healthz {
+    reverse_proxy backend-ws:8080
+  }
+
+  # 3. Frontend React SPA -> Nginx container
+  handle {
+    reverse_proxy frontend:80
+  }
+}
