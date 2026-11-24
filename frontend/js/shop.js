@@ -12,9 +12,9 @@ const openPetPage = card => {
 const getOwnedPets = () => {
   try {
     const saved = JSON.parse(localStorage.getItem('petcoin-unlocked') || '[]');
-    return new Set(['Gajah', ...saved.filter(name => ['Bear', 'Mochi', 'Boba', 'Ayam'].includes(name))]);
+    return new Set(['Mochi', ...saved.filter(name => ['Gajah', 'Bear', 'Mochi', 'Boba', 'Ayam'].includes(name))]);
   } catch {
-    return new Set(['Gajah']);
+    return new Set(['Mochi']);
   }
 };
 
@@ -54,7 +54,7 @@ cards.forEach(card => card.querySelector('.buy-button').addEventListener('click'
 
   ownedPets.add(pet);
   localStorage.setItem('petcoin-treats', String(treats - price));
-  localStorage.setItem('petcoin-unlocked', JSON.stringify([...ownedPets].filter(item => item !== 'Gajah')));
+  localStorage.setItem('petcoin-unlocked', JSON.stringify([...ownedPets].filter(item => item !== 'Mochi')));
   status.textContent = `${name} sudah masuk koleksimu!`;
   renderShop();
 }));

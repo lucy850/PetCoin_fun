@@ -23,8 +23,9 @@ function updatePetLocks() {
   } catch {
     unlocked = [];
   }
+  const ownedPets = new Set(['Mochi', ...unlocked.filter(name => ['Gajah', 'Bear', 'Mochi', 'Boba', 'Ayam'].includes(name))]);
   document.querySelectorAll('.purchasable-pet').forEach(card => {
-    const isOwned = unlocked.includes(card.dataset.pet);
+    const isOwned = ownedPets.has(card.dataset.pet);
     card.href = isOwned ? card.dataset.page : 'frontend/shop.html';
     const label = card.querySelector('.purchase-tag');
     if (label) label.textContent = isOwned ? 'SUDAH DIMILIKI · BUKA' : `BELI · ${card.dataset.price} TREAT`;

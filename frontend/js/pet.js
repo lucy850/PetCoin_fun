@@ -5,8 +5,8 @@ const pets = {
   Rabbit: { name: 'Boba', species: 'EPIC PET · KELINCI', normal: 'kelinci.png', happy: 'kelinci love.png', sad: 'kelinci sedih.png' }
 };
 const png = 'png/';
-const pet = pets[new URLSearchParams(location.search).get('pet')] || pets.Bear;
-const species = new URLSearchParams(location.search).get('pet') || 'Bear';
+const pet = pets[new URLSearchParams(location.search).get('pet')] || pets.Cat;
+const species = new URLSearchParams(location.search).get('pet') || 'Cat';
 const hairAssets = {
   Bear: [['Long Hair','long beruang.png','long beruang seneng.png','long beruang sedih.png'],['Curly Hair','curly beruang.png','curly beruang seneng.png','curly beruang sedih.png'],['Short Hair','short beruang.png','short beruang seneng.png','short beruang sedih.png']],
   Cat: [['Long Hair','panjang kucing.png','panjang kucing seneng.png','panjang kucing sedih.png'],['Curly Hair','curly kucing.png','curly kucing seneng.png','curly kucing sedih.png'],['Short Hair','pendek kucing.png','pendek kucing seneng.png','pendek kucing sedih.png']],
@@ -18,8 +18,8 @@ const accessoryAssets = {
   Chicken: ['syal ayam.png','hat ayam.png','kalung ayam.png'], Rabbit: ['syal kelinci.png','hat kelinci.png','kalung kelinci.png']
 };
 const itemData = {
-  hair: (hairAssets[species] || hairAssets.Bear).map(([name,image,happy,sad],index) => ({name,price:index===0?0:8,image,happy,sad})),
-  accessories: (accessoryAssets[species] || accessoryAssets.Bear).map((image,index) => ({name:['Scarf','Hat','Necklace'][index],price:index===1?0:5,image})),
+  hair: (hairAssets[species] || hairAssets.Cat).map(([name,image,happy,sad],index) => ({name,price:index===0?0:8,image,happy,sad})),
+  accessories: (accessoryAssets[species] || accessoryAssets.Cat).map((image,index) => ({name:['Scarf','Hat','Necklace'][index],price:index===1?0:5,image})),
   playTools: [{name:'Racket',price:5,image:'racket.png'},{name:'Basket',price:5,image:'basket.png'},{name:'Fishing Gear',price:5,image:'pancingan.png'}]
 };
 const categoryLabels = {hair:'Hair',accessories:'Accessories',playTools:'Play tools'};
