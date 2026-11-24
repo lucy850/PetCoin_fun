@@ -437,7 +437,7 @@ export function PlaygroundView() {
                     setNickname(e.target.value);
                     if (nameError) setNameError('');
                   }}
-                  placeholder="Contoh: Rangga, MochiLover..."
+                  placeholder="Contoh: Ira, Rangga, Peto..."
                   className="w-full border-2 border-[#171713] bg-[#f5efdf] px-4 py-3 text-sm font-bold focus:outline-none focus:bg-white shadow-[3px_3px_0_#171713]"
                 />
                 {nameError && <p className="text-xs font-bold text-[#b91c1c]">{nameError}</p>}
