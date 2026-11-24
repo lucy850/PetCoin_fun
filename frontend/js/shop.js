@@ -4,6 +4,24 @@ const balanceDisplay = document.querySelector('#treat-balance');
 const ownedCount = document.querySelector('#owned-count');
 const status = document.querySelector('#shop-status');
 
+const menuToggle = document.querySelector('#menu-toggle');
+const siteNav = document.querySelector('#site-nav');
+
+menuToggle?.addEventListener('click', () => {
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!expanded));
+  menuToggle.setAttribute('aria-label', expanded ? 'Buka menu' : 'Tutup menu');
+  siteNav?.classList.toggle('open', !expanded);
+});
+
+siteNav?.addEventListener('click', event => {
+  if (event.target.closest('a')) {
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Buka menu');
+  }
+});
+
 const getTreats = () => Number(localStorage.getItem('petcoin-treats') || 0);
 const openPetPage = card => {
   const destination = new URL(card.dataset.page, window.location.href);
