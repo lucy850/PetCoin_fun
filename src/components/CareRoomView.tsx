@@ -256,7 +256,10 @@ export function CareRoomView({ onNavigate }: CareRoomViewProps) {
               <div className="font-mono-num text-[11px] font-bold text-[#171713]/65">
                 ROOM {activeRoom.number} / 04 · {activePetDef.speciesLabel}
               </div>
-              <h1 className="font-display text-2xl sm:text-3xl font-extrabold">{activeRoom.name}</h1>
+              <h1 className="flex items-center gap-2 font-display text-2xl sm:text-3xl font-extrabold">
+                <activeRoom.icon className="w-6 h-6 sm:w-7 sm:h-7 shrink-0" aria-hidden="true" />
+                {activeRoom.name}
+              </h1>
             </div>
 
             <div className="flex items-center gap-1.5">

@@ -62,7 +62,10 @@ export function ShopView({ onNavigate }: ShopViewProps) {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <p className="text-xs font-bold text-[#171713]/65">Toko PetCoin · 2 Mata Uang</p>
-          <h1 className="font-display text-3xl sm:text-4xl font-extrabold">Adopsi Pet &amp; Butik Gaya</h1>
+          <h1 className="flex items-center gap-2 font-display text-3xl sm:text-4xl font-extrabold">
+            <ShoppingBag className="w-7 h-7 sm:w-8 sm:h-8 shrink-0" aria-hidden="true" />
+            Adopsi Pet &amp; Butik Gaya
+          </h1>
           <p className="text-sm text-[#171713]/80 mt-1">
             Gunakan <strong>Treat 🍪</strong> untuk adopsi hewan baru, dan <strong>Coin 🪙</strong> untuk membeli aksesori serta mainan.
           </p>

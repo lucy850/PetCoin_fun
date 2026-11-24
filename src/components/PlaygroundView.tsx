@@ -417,7 +417,8 @@ export function PlaygroundView() {
                 )}
               </div>
 
-              <h1 className="font-display text-3xl sm:text-4xl font-extrabold">
+              <h1 className="flex items-center gap-2 font-display text-3xl sm:text-4xl font-extrabold">
+                <Users className="w-7 h-7 sm:w-8 sm:h-8 shrink-0" aria-hidden="true" />
                 PetCoin Playground
               </h1>
               <p className="text-sm text-[#171713]/80 leading-relaxed">
@@ -508,7 +509,10 @@ export function PlaygroundView() {
       {/* Top Status Strip */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="font-display text-2xl sm:text-3xl font-extrabold">PetCoin Playground</h1>
+          <h1 className="flex items-center gap-2 font-display text-2xl sm:text-3xl font-extrabold">
+            <Users className="w-6 h-6 sm:w-7 sm:h-7 shrink-0" aria-hidden="true" />
+            PetCoin Playground
+          </h1>
           <span
             className={`font-mono-num text-xs font-extrabold border-2 border-[#171713] px-2.5 py-1 flex items-center gap-1.5 ${
               connState === 'connected' ? 'bg-[#8be084]' : 'bg-[#ffd86b]'

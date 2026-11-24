@@ -56,8 +56,9 @@ export function HomeView({ onNavigate, onOpenMissions }: HomeViewProps) {
               <span>Hari Ke-{state.daily.streakDay}</span>
             </div>
 
-            <h1 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.08] text-[#171713]">
-              Rawat pet lucumu. Kumpulkan Treat &amp; Coin!
+            <h1 className="flex items-start gap-2 font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.08] text-[#171713]">
+              <Sparkles className="w-7 h-7 sm:w-9 sm:h-9 shrink-0 mt-1 text-[#b77d00]" aria-hidden="true" />
+              <span>Rawat pet lucumu. Kumpulkan Treat &amp; Coin!</span>
             </h1>
 
             <p className="text-sm sm:text-base text-[#171713]/80 max-w-xl leading-relaxed">
