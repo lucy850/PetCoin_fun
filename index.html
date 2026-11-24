@@ -9,15 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="landing.css" />
+  <link rel="stylesheet" href="assets/css/landing.css" />
 </head>
 <body>
   <div class="topline">PET COIN CLUB <span>✳</span> RAWAT · MAIN · KUMPULKAN</div>
   <header class="site-header">
     <a class="brand" href="#home"><span class="brand-mark">P</span><span>PET<span class="brand-light">COIN</span></span></a>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
-    <nav id="site-nav" aria-label="Navigasi utama"><a href="#home">Home</a><a href="#play">Cara main</a><a href="#friends">Pet teman</a><a href="frontend_new/shop.html">Pet Shop</a></nav>
-    <a class="header-cta" href="frontend_new/shop.html">Lihat koleksi <span>↗</span></a>
+    <nav id="site-nav" aria-label="Navigasi utama"><a href="#home">Home</a><a href="#play">Cara main</a><a href="#friends">Pet teman</a><a href="frontend/shop.html">Pet Shop</a></nav>
+    <a class="header-cta" href="frontend/shop.html">Lihat koleksi <span>↗</span></a>
   </header>
 
   <main>
@@ -26,12 +26,12 @@
         <span class="eyebrow"><i></i> YOUR NEW HAPPY PLACE</span>
         <h1>Koleksi petmu.<br /><span>Petualangan</span><br />dimulai!</h1>
         <p>Temukan teman baru, mainkan mini-game, dan kumpulkan hewan lucu untuk melengkapi koleksimu.</p>
-        <div class="hero-actions"><a class="button button-dark" href="frontend_new/shop.html">Jelajahi koleksi <span>↗</span></a><a class="text-link" href="#friends">Lihat semua pet <span>↓</span></a></div>
+        <div class="hero-actions"><a class="button button-dark" href="frontend/shop.html">Jelajahi koleksi <span>↗</span></a><a class="text-link" href="#friends">Lihat semua pet <span>↓</span></a></div>
         <div class="hero-footnote"><span class="mini-stars">✳ ✦ ✳</span> LITTLE PETS, BIG FEELINGS</div>
       </div>
       <div class="hero-art" aria-label="Gambar Kucing">
         <span class="cat-orbit cat-orbit-one"></span><span class="cat-orbit cat-orbit-two"></span><span class="cat-orbit cat-orbit-three"></span>
-        <img class="hero-cat" src="frontend_new/png/kucing123.png" alt="Kucing Pet Coin" role="button" tabindex="0" aria-label="Elus Kucing" title="Klik atau tap untuk mengelus Kucing" />
+        <img class="hero-cat" src="frontend/png/kucing123.png" alt="Kucing Pet Coin" role="button" tabindex="0" aria-label="Elus Kucing" title="Klik atau tap untuk mengelus Kucing" />
       </div>
       <div class="hero-bottom"><span>SCROLL TO EXPLORE</span><span>01 / 03</span></div>
     </section>
@@ -48,23 +48,23 @@
     </section>
 
     <section class="friends-section" id="friends">
-      <div class="section-heading"><div><span class="eyebrow">PICK YOUR PAL</span><h2>Siapa yang mau<br />jadi temanmu?</h2></div><a class="text-link" href="frontend_new/shop.html">Buka Pet Shop <span>↗</span></a></div>
+      <div class="section-heading"><div><span class="eyebrow">PICK YOUR PAL</span><h2>Siapa yang mau<br />jadi temanmu?</h2></div><a class="text-link" href="frontend/shop.html">Buka Pet Shop <span>↗</span></a></div>
       <div class="friend-grid">
-        <a class="friend-card friend-elephant" href="frontend_new/gajah.html"><span class="friend-number">01 / THE GENTLE ONE</span><img src="frontend_new/png/gajah%201.png" alt="Gajah" /><span class="friend-name">Gajah <b>↗</b></span><small>Manis, tenang, suka camilan.</small></a>
-        <a class="friend-card friend-cat purchasable-pet" data-pet="Mochi" data-price="5" data-page="frontend_new/pet.html?pet=Cat" href="frontend_new/shop.html"><span class="friend-number">02 / THE PLAYFUL ONE</span><img src="frontend_new/png/kucing123.png" alt="Kucing" /><span class="friend-name">Kucing <b>↗</b></span><small>Selalu siap untuk bermain.</small><span class="purchase-tag">BELI · 5 TREAT</span></a>
-        <a class="friend-card friend-bunny purchasable-pet" data-pet="Boba" data-price="12" data-page="frontend_new/pet.html?pet=Rabbit" href="frontend_new/shop.html"><span class="friend-number">03 / THE BOUNCY ONE</span><img src="frontend_new/png/kelinci.png" alt="Kelinci" /><span class="friend-name">Kelinci <b>↗</b></span><small>Lincah dan penuh rasa ingin tahu.</small><span class="purchase-tag">BELI · 12 TREAT</span></a>
-        <a class="friend-card friend-bear purchasable-pet" data-pet="Bear" data-price="8" data-page="frontend_new/pet.html?pet=Bear" href="frontend_new/shop.html"><span class="friend-number">04 / THE COZY ONE</span><img src="frontend_new/png/Bear%201.png" alt="Beruang" /><span class="friend-name">Beruang <b>↗</b></span><small>Teman hangat yang suka camilan.</small><span class="purchase-tag">BELI · 8 TREAT</span></a>
-        <a class="friend-card friend-chicken purchasable-pet" data-pet="Ayam" data-price="20" data-page="frontend_new/pet.html?pet=Chicken" href="frontend_new/shop.html"><span class="friend-number">05 / THE SUNNY ONE</span><img src="frontend_new/png/Ayam.png" alt="Ayam" /><span class="friend-name">Ayam <b>↗</b></span><small>Ceria, berani, dan selalu siap berpetualang.</small><span class="purchase-tag">BELI · 20 TREAT</span></a>
+        <a class="friend-card friend-elephant" href="frontend/gajah.html"><span class="friend-number">01 / THE GENTLE ONE</span><img src="frontend/png/gajah%201.png" alt="Gajah" /><span class="friend-name">Gajah <b>↗</b></span><small>Manis, tenang, suka camilan.</small></a>
+        <a class="friend-card friend-cat purchasable-pet" data-pet="Mochi" data-price="5" data-page="frontend/pet.html?pet=Cat" href="frontend/shop.html"><span class="friend-number">02 / THE PLAYFUL ONE</span><img src="frontend/png/kucing123.png" alt="Kucing" /><span class="friend-name">Kucing <b>↗</b></span><small>Selalu siap untuk bermain.</small><span class="purchase-tag">BELI · 5 TREAT</span></a>
+        <a class="friend-card friend-bunny purchasable-pet" data-pet="Boba" data-price="12" data-page="frontend/pet.html?pet=Rabbit" href="frontend/shop.html"><span class="friend-number">03 / THE BOUNCY ONE</span><img src="frontend/png/kelinci.png" alt="Kelinci" /><span class="friend-name">Kelinci <b>↗</b></span><small>Lincah dan penuh rasa ingin tahu.</small><span class="purchase-tag">BELI · 12 TREAT</span></a>
+        <a class="friend-card friend-bear purchasable-pet" data-pet="Bear" data-price="8" data-page="frontend/pet.html?pet=Bear" href="frontend/shop.html"><span class="friend-number">04 / THE COZY ONE</span><img src="frontend/png/Bear%201.png" alt="Beruang" /><span class="friend-name">Beruang <b>↗</b></span><small>Teman hangat yang suka camilan.</small><span class="purchase-tag">BELI · 8 TREAT</span></a>
+        <a class="friend-card friend-chicken purchasable-pet" data-pet="Ayam" data-price="20" data-page="frontend/pet.html?pet=Chicken" href="frontend/shop.html"><span class="friend-number">05 / THE SUNNY ONE</span><img src="frontend/png/Ayam.png" alt="Ayam" /><span class="friend-name">Ayam <b>↗</b></span><small>Ceria, berani, dan selalu siap berpetualang.</small><span class="purchase-tag">BELI · 20 TREAT</span></a>
       </div>
     </section>
 
 
     <section class="bathtub-feature" aria-label="Kamar mandi Kucing interaktif">
-      <iframe class="cat-bathroom-frame" src="frontend_new/cat-bathroom.html" title="Kucing bermain di kamar mandi interaktif" loading="lazy"></iframe>
+      <iframe class="cat-bathroom-frame" src="frontend/cat-bathroom.html" title="Kucing bermain di kamar mandi interaktif" loading="lazy"></iframe>
     </section>
   </main>
 
-  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">P</span><span>PET<span class="brand-light">COIN</span></span></a><span>MADE FOR YOUR NEXT LITTLE ADVENTURE ♥</span><a href="frontend_new/shop.html">Pet Shop ↗</a></footer>
-  <script src="landing.js"></script>
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">P</span><span>PET<span class="brand-light">COIN</span></span></a><span>MADE FOR YOUR NEXT LITTLE ADVENTURE ♥</span><a href="frontend/shop.html">Pet Shop ↗</a></footer>
+  <script src="assets/js/landing.js"></script>
 </body>
 </html>
