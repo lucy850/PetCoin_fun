@@ -103,7 +103,10 @@ export function ShopView({ onNavigate }: ShopViewProps) {
 
       {/* TAB 1: ADOPSI HEWAN DENGAN TREAT */}
       {tab === 'adopt' && (
-        <section aria-label="Katalog adopsi hewan" className="space-y-4">
+        <section aria-labelledby="adoption-catalog-title" className="space-y-4">
+          <h2 id="adoption-catalog-title" className="font-display text-xl sm:text-2xl font-extrabold">
+            Pilih Pet untuk Diadopsi
+          </h2>
           <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-bold">
             <span>
               Dimiliki: <strong className="font-mono-num">{state.ownedPets.length} / {PET_CATALOG.length}</strong> Pet
@@ -189,13 +192,16 @@ export function ShopView({ onNavigate }: ShopViewProps) {
 
       {/* TAB 2: BUTIK AKSESORI DENGAN COIN */}
       {tab === 'accessories' && (
-        <section aria-label="Butik aksesori" className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <section aria-labelledby="accessory-shop-title" className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left: Live Dressing Preview */}
           <div className="lg:col-span-4 neo-card p-5 bg-[#fffaf0] space-y-4">
             <div className="flex items-center justify-between">
               <div>
+                <h2 id="accessory-shop-title" className="font-display text-xl font-extrabold">
+                  Butik Aksesori
+                </h2>
                 <p className="text-xs font-bold text-[#171713]/65">Pratinjau Pet</p>
-                <h2 className="font-display text-xl font-extrabold">{targetPetDef.name}</h2>
+                <h3 className="font-display text-lg font-extrabold">{targetPetDef.name}</h3>
               </div>
               <span className="font-mono-num text-xs font-extrabold bg-[#fff3a6] border-2 border-[#171713] px-2.5 py-1">
                 🪙 {state.coins}
