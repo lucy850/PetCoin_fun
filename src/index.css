@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cream: #f5efdf;
+    --cream-card: #fffaf0;
+    --ink: #171713;
+    --yellow: #ffd86b;
+    --pink: #ff8fb3;
+    --blue: #7bd3ea;
+    --green: #8be084;
+    --lilac: #d3b8ff;
+    --coral: #ff7f6b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    text-wrap: balance;
+  }
+
+  .font-mono-num {
+    font-family: 'DM Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Neo-brutalist tactile surfaces */
+.neo-card {
+  background-color: var(--cream-card);
+  border: 2.5px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.neo-card-sm {
+  background-color: var(--cream-card);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.neo-btn {
+  border: 2.5px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1), background-color 140ms ease;
+  cursor: pointer;
+}
+
+.neo-btn:hover:not(:disabled) {
+  transform: translate(1.5px, 1.5px);
+  box-shadow: 1.5px 1.5px 0 var(--ink);
+}
+
+.neo-btn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.neo-btn:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+/* Room backdrop patterns */
+.room-grid-bg {
+  background-image:
+    linear-gradient(rgba(23, 23, 19, 0.08) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(23, 23, 19, 0.08) 1.5px, transparent 1.5px);
+  background-size: 44px 44px;
+}
+
+/* Juice animations (compositor-only: transform & opacity) */
+@keyframes pet-squish {
+  0% { transform: scale(1, 1) translateY(0); }
+  25% { transform: scale(1.1, 0.88) translateY(6px); }
+  55% { transform: scale(0.94, 1.08) translateY(-18px); }
+  80% { transform: scale(1.03, 0.97) translateY(2px); }
+  100% { transform: scale(1, 1) translateY(0); }
+}
+
+@keyframes pet-breathe {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.015, 0.985) translateY(2px); }
+}
+
+@keyframes pet-sad-shiver {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+@keyframes float-up-fade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 6px) scale(0.7);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -10px) scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -68px) scale(0.95);
+  }
+}
+
+@keyframes shower-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  25% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+}
+
+@keyframes zzz-drift {
+  0% {
+    opacity: 0;
+    transform: translate(0, 8px) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(18px, -44px) scale(1.15);
+  }
+}
+
+@keyframes screen-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-4px, 2px); }
+  40% { transform: translate(4px, -2px); }
+  60% { transform: translate(-3px, -1px); }
+  80% { transform: translate(3px, 2px); }
+}
+
+.animate-pet-squish {
+  animation: pet-squish 460ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-pet-breathe {
+  animation: pet-breathe 2.8s ease-in-out infinite;
+}
+
+.animate-pet-sad {
+  animation: pet-sad-shiver 2.2s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: float-up-fade 950ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shower-drop {
+  animation: shower-fall 650ms linear infinite;
+}
+
+.animate-zzz {
+  animation: zzz-drift 2s ease-out infinite;
+}
+
+.animate-shake {
+  animation: screen-shake 280ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pet-breathe,
+  .animate-pet-sad,
+  .animate-pet-squish,
+  .animate-shower-drop,
+  .animate-zzz,
+  .animate-shake {
+    animation: none !important;
+  }
+}
